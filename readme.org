@@ -74,6 +74,24 @@
     ": 删除标记文件夹
     m: 新建标记文件
 
+** scoop
+   - 删除仓库
+     scoop bucket rm main
+
+   - 查看仓库
+     scoop bucket list
+
+   - 搜索软件
+     scoop search [packageName]
+
+   - 下载软件
+     scoop install [packageName]
+
+   - 移除软件
+     scoop uninstall [packageName]
+
+   - 更新软件
+     scoop update *
 
 
 
