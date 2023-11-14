@@ -2,31 +2,31 @@
     双击ps安装程序.
 
 # 配置powershell
-  1. powershell配置文件'Microsoft.PowerShell_profile.ps1'
-     路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'
-     快捷命令'psconfig'
-  2. install Directory jumper z
-     2.1 Open powershell
-     2.2 Input 'Install-Module -Name z -Force'
-  3. 安装 Icons
-     3.1 Open powershell
-     3.2 Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'
-  4. 安装 starship
-     4.1 Open powershell
-     4.2 Input 'winget install starship'
-     4.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'
-     4.4 配置文件'starship.toml'.
-         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'
-     4.5 快捷命令'ssconfig'
-  5. 由于版本自带命令提示插件'PSReadLine',无需安装.
-  6. 安装scoop
-     6.1 Open powershell
-     6.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y
-     6.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'
-  7. 安装lf (通过scoop)
-     7.1 Open powershell
-     7.2 Input 'scoop install lf'
-     7.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'
+  1. powershell配置文件'Microsoft.PowerShell_profile.ps1'  
+     路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'  
+     快捷命令'psconfig'  
+  2. install Directory jumper z  
+     2.1 Open powershell  
+     2.2 Input 'Install-Module -Name z -Force'  
+  3. 安装 Icons  
+     3.1 Open powershell  
+     3.2 Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'  
+  4. 安装 starship  
+     4.1 Open powershell  
+     4.2 Input 'winget install starship'  
+     4.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     4.4 配置文件'starship.toml'.  
+         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     4.5 快捷命令'ssconfig'  
+  5. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+  6. 安装scoop  
+     6.1 Open powershell  
+     6.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
+     6.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
+  7. 安装lf (通过scoop)  
+     7.1 Open powershell  
+     7.2 Input 'scoop install lf'  
+     7.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
      注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。 
 
 # usage
