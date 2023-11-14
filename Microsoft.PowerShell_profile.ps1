@@ -22,32 +22,12 @@ Set-PSReadLineKeyHandler -Key Ctrl+Backspace -Function BackwardKillWord
 Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function HistorySearchBackward
 
-# 同步powershell与退出lf时的路径一致
-Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
-    [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
-    [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
-    [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
-}
-
-# alacritty映射特性，有缺陷,vim的insert状态下输入快捷键会输出'F10,a'等
-# 因此，最终映射ALT-h j k l 为左下上右
-# Set-PSReadLineKeyHandler -Chord 'F10,a' -Function HistorySearchForward
-# Set-PSReadLineKeyHandler -Chord 'F10,b' -Function HistorySearchBackward
-
 # Alias
 Set-Alias vi nvim
 Set-Alias ipy ipython
 Set-Alias which get-command
 Set-Alias rename Rename-Item
 Set-Alias git LazyGit
-
-
-
-
-function img {
-    wezterm imgcat $args # shortcut for imgcat
-}
-
 
 # 查看目录 ls & ll
 function ListDirectory {
@@ -83,42 +63,54 @@ function desktop { cd '~/Desktop' }
 #Fav Variables & Shortcuts
 $neovimDir = "C:\Users\ThinkPad\AppData\Local\nvim"
 
-# ni 新建文本
-# ren 重命名
+# 修改 PSreadLine 历史记录, 删除错误的记录
+# (Get-PSReadLineOption).HistorySavePath  可以获得历史记录文件路径
+function editH { vi -c 'normal! G' (Get-PSReadLineOption).HistorySavePath }
 
-
-# config files(Wezterm + Powershell + starship)
+# ------------------- config files -------------------
 # wezterm
 function weconfig { nvim 'C:\Users\ThinkPad\.config\wezterm\config\appearance.lua' }
 # alacritty
 function alconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\alacritty\alacritty.yml' }
-# powershell (C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1)
+# powershell
 function psconfig { nvim $PROFILE }
 # starship
 function ssconfig { nvim 'C:\Users\ThinkPad\Documents\PowerShell\starship.toml' }
 # nvim
 function viconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
-
 # windows terminal
 function wtconfig { nvim 'C:\Users\ThinkPad\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' }
-
-# 修改 PSreadLine 历史记录, 删除错误的记录
-# (Get-PSReadLineOption).HistorySavePath  可以获得历史记录文件路径
-function editH {
-  vi -c 'normal! G' (Get-PSReadLineOption).HistorySavePath
-}
-
 # lf
 function lfconfig { nvim 'C:\Users\ThinkPad\AppData\Local\lf\lfrc' }
 
-# lf-trsah
+# ------------------- lf -------------------
+# lf-trsah (回收站)
 function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
 
+# 同步powershell与退出lf时的路径一致
+Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
+    [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
+    [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
+    [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
+}
+
+# ------------------- wezterm -------------------
+# wezterm图片预览
+function img { wezterm imgcat $args }
+
+# ------------------- alacritty -------------------
+# alacritty映射特性，有缺陷,vim的insert状态下输入快捷键会输出'F10,a'等
+# 因此，最终映射ALT-h j k l 为左下上右
+# Set-PSReadLineKeyHandler -Chord 'F10,a' -Function HistorySearchForward
+# Set-PSReadLineKeyHandler -Chord 'F10,b' -Function HistorySearchBackward
 
 
 
 
 
+
+# ni 新建文本
+# ren 重命名
 
 
 
