@@ -48,7 +48,7 @@ function ... { cd ..; cd ..}
 function .... { cd ..; cd ..; cd .. }
 function ..... { cd ..; cd ..; cd ..; cd ..}
 
-# 当前工作目录以我的电脑形式打开
+# 当前工作目录以我的电脑形式打开, e
 function OpenCurrentFolder {
 	param
 	(
@@ -56,7 +56,7 @@ function OpenCurrentFolder {
 	)
 	Invoke-Item $Path
 }
-Set-Alias -Name open -Value OpenCurrentFolder
+Set-Alias -Name e -Value OpenCurrentFolder
 
 function desktop { cd '~/Desktop' }
 
