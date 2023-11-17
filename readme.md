@@ -10,10 +10,10 @@
      6.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
      6.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
   3. 安装 Icons  
-     通过scoop安装 (推荐),Open powershell
-         'scoop bucket add extras'
-         'scoop install terminal-icons'
-     或通过PSGallery安装
+     通过scoop安装 (推荐),Open powershell  
+         'scoop bucket add extras'  
+         'scoop install terminal-icons'  
+     或通过PSGallery安装  
          Open powershell  
          Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'  
   4. 安装 starship  
