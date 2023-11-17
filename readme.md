@@ -6,9 +6,9 @@
      路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'  
      快捷命令'psconfig'  
   2. 安装scoop, 通过scoop安装插件  
-     6.1 Open powershell  
-     6.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
-     6.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
+     2.1 Open powershell  
+     2.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
+     2.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
   3. 安装 Icons  
      通过scoop安装 (推荐),Open powershell  
          'scoop bucket add extras'  
@@ -24,13 +24,13 @@
          路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
      4.5 快捷命令'ssconfig'  
   5. 安装lf  
-     7.1 Open powershell  
-     7.2 Input 'scoop install lf'  
-     7.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
+     5.1 Open powershell  
+     5.2 Input 'scoop install lf'  
+     5.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
      注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
   6. install Directory jumper z (通过scoop)  
-     2.1 Open powershell  
-     2.2 Input 'scoop install z'  
+     6.1 Open powershell  
+     6.2 Input 'scoop install z'  
   7. 由于版本自带命令提示插件'PSReadLine',无需安装.  
 
 # usage
