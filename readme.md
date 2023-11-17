@@ -81,57 +81,57 @@
 
 ## scoop
 
-   - 搜索软件
+   - 搜索软件  
      scoop search [packageName]
 
-   - 下载软件
+   - 下载软件  
      scoop install [packageName]
 
-   - 移除软件
+   - 移除软件  
      scoop uninstall [packageName]
 
-   - To update all installed packages:
+   - To update all installed packages:  
      scoop update *
 
-   - To list installed packages:
+   - To list installed packages:  
      scoop list
 
-   - To display information about a package:
+   - To display information about a package:  
      scoop info [packageName]
 
-   - To list all known buckets (a bucket is an application repository):
+   - To list all known buckets (a bucket is an application repository):  
      scoop bucket known
 
-   - To add a bucket by its alias or a Git repository URL:
+   - To add a bucket by its alias or a Git repository URL:  
      scoop bucket add [bucket]
 
-   - 删除仓库
+   - 删除仓库  
      scoop bucket rm main
 
    --
 
-   - To install scoop (requires powershell >= 3):
+   - To install scoop (requires powershell >= 3):  
    iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
-   - To uninstall scoop:
+   - To uninstall scoop:  
    scoop uninstall scoop
 
-   - To update scoop:
+   - To update scoop:  
    scoop update
 
-   - To install several utils at once:
+   - To install several utils at once:  
    scoop install 7zip curl sudo git openssh coreutils grep sed less
 
-   - To install several programming languages at once:
+   - To install several programming languages at once:  
    scoop install python ruby go nodejs
 
-   - To install php (see https://github.com/lukesampson/scoop/wiki/Custom-PHP-configuration for persisting php.ini settings through updates):
+   - To install php (see https://github.com/lukesampson/scoop/wiki/Custom-PHP-configuration for persisting php.ini settings through updates):  
    scoop install php
 
-   - To install an app (Git) globally:
+   - To install an app (Git) globally:  
    sudo scoop install git --global
 
-   - To update a globally installed app (Git):
+   - To update a globally installed app (Git):  
    sudo scoop update git --global
 
 
