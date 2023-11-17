@@ -2,36 +2,36 @@
     双击ps安装程序.
 
 # 配置powershell
-  1. powershell配置文件'Microsoft.PowerShell_profile.ps1'  
-     路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'  
-     快捷命令'psconfig'  
-  2. 安装scoop, 通过scoop安装插件  
-     6.1 Open powershell  
-     6.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
-     6.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
-  3. 安装 Icons  
-     通过scoop安装 (推荐),Open powershell  
-         'scoop bucket add extras'  
-         'scoop install terminal-icons'  
-     或通过PSGallery安装  
-         Open powershell  
-         Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'  
-  4. 安装 starship  
-     4.1 Open powershell  
-     4.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
-     4.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     4.4 配置文件'starship.toml'.  
-         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     4.5 快捷命令'ssconfig'  
-  5. 安装lf  
-     7.1 Open powershell  
-     7.2 Input 'scoop install lf'  
-     7.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
-     注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。 
+  1. powershell配置文件'Microsoft.PowerShell_profile.ps1'
+     路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'
+     快捷命令'psconfig'
+  2. 安装scoop, 通过scoop安装插件
+     6.1 Open powershell
+     6.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y
+     6.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'
+  3. 安装 Icons
+     通过scoop安装 (推荐),Open powershell
+         'scoop bucket add extras'
+         'scoop install terminal-icons'
+     或通过PSGallery安装
+         Open powershell
+         Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'
+  4. 安装 starship
+     4.1 Open powershell
+     4.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'
+     4.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'
+     4.4 配置文件'starship.toml'.
+         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'
+     4.5 快捷命令'ssconfig'
+  5. 安装lf
+     7.1 Open powershell
+     7.2 Input 'scoop install lf'
+     7.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'
+     注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。
   6. install Directory jumper z (通过scoop)
-     2.1 Open powershell  
-     2.2 Input 'scoop install z'  
-  7. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+     2.1 Open powershell
+     2.2 Input 'scoop install z'
+  7. 由于版本自带命令提示插件'PSReadLine',无需安装.
 
 # usage
 ## z
@@ -80,11 +80,6 @@
     m: 新建标记文件
 
 ## scoop
-   - 删除仓库
-     scoop bucket rm main
-
-   - 查看仓库
-     scoop bucket list
 
    - 搜索软件
      scoop search [packageName]
@@ -95,11 +90,49 @@
    - 移除软件
      scoop uninstall [packageName]
 
-   - 更新软件
+   - To update all installed packages:
      scoop update *
 
+   - To list installed packages:
+     scoop list
 
+   - To display information about a package:
+     scoop info [packageName]
 
+   - To list all known buckets (a bucket is an application repository):
+     scoop bucket known
+
+   - To add a bucket by its alias or a Git repository URL:
+     scoop bucket add [bucket]
+
+   - 删除仓库
+     scoop bucket rm main
+
+   --
+
+   - To install scoop (requires powershell >= 3):
+   iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+
+   - To uninstall scoop:
+   scoop uninstall scoop
+
+   - To update scoop:
+   scoop update
+
+   - To install several utils at once:
+   scoop install 7zip curl sudo git openssh coreutils grep sed less
+
+   - To install several programming languages at once:
+   scoop install python ruby go nodejs
+
+   - To install php (see https://github.com/lukesampson/scoop/wiki/Custom-PHP-configuration for persisting php.ini settings through updates):
+   scoop install php
+
+   - To install an app (Git) globally:
+   sudo scoop install git --global
+
+   - To update a globally installed app (Git):
+   sudo scoop update git --global
 
 
 
