@@ -82,6 +82,8 @@ function viconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
 function wtconfig { nvim 'C:\Users\ThinkPad\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' }
 # lf
 function lfconfig { nvim 'C:\Users\ThinkPad\AppData\Local\lf\lfrc' }
+# goneovim
+function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.toml' }
 
 # ------------------- lf -------------------
 # lf-trsah (回收站)
