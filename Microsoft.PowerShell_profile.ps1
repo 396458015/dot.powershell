@@ -86,15 +86,21 @@ function lfconfig { nvim 'C:\Users\ThinkPad\AppData\Local\lf\lfrc' }
 function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.toml' }
 
 # ------------------- lf -------------------
-# lf-trsah (回收站)
-function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
-
+# lfcd
 # 同步powershell与退出lf时的路径一致
-Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
+# Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord Ctrl+f -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
     [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
 }
+
+Set-PSReadlineKeyHandler -Chord "Alt+f"  -ScriptBlock {
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("lfcd ")
+}
+
+# lf-trsah (回收站)
+function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
 
 # ------------------- wezterm -------------------
 # wezterm图片预览
@@ -105,10 +111,6 @@ function img { wezterm imgcat $args }
 # 因此，最终映射ALT-h j k l 为左下上右
 # Set-PSReadLineKeyHandler -Chord 'F10,a' -Function HistorySearchForward
 # Set-PSReadLineKeyHandler -Chord 'F10,b' -Function HistorySearchBackward
-
-
-
-
 
 
 # ni 新建文本
