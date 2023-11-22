@@ -23,11 +23,16 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function HistorySearchBackward
 
 # Alias
-Set-Alias vi nvim
+Set-Alias v nvim
+Set-Alias g LazyGit
 Set-Alias ipy ipython
-Set-Alias which get-command
 Set-Alias rename Rename-Item
-Set-Alias git LazyGit
+
+# Utilities
+function which ($command) {
+  Get-Command -Name $command -ErrorAction SilentlyContinue |
+    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+}
 
 # 查看目录 ls & ll
 function ListDirectory {
@@ -48,7 +53,7 @@ function ... { cd ..; cd ..}
 function .... { cd ..; cd ..; cd .. }
 function ..... { cd ..; cd ..; cd ..; cd ..}
 
-# 当前工作目录以我的电脑形式打开, e
+# 当前工作目录以我的电脑形式打开, o
 function OpenCurrentFolder {
 	param
 	(
@@ -56,16 +61,13 @@ function OpenCurrentFolder {
 	)
 	Invoke-Item $Path
 }
-Set-Alias -Name e -Value OpenCurrentFolder
+Set-Alias -Name o -Value OpenCurrentFolder
 
-function desktop { cd '~/Desktop' }
-
-#Fav Variables & Shortcuts
-$neovimDir = "C:\Users\ThinkPad\AppData\Local\nvim"
+function dt { cd '~/Desktop' }
 
 # 修改 PSreadLine 历史记录, 删除错误的记录
 # (Get-PSReadLineOption).HistorySavePath  可以获得历史记录文件路径
-function editH { vi -c 'normal! G' (Get-PSReadLineOption).HistorySavePath }
+function edith { nvim -c 'normal! G' (Get-PSReadLineOption).HistorySavePath }
 
 # ------------------- config files -------------------
 # wezterm
@@ -77,7 +79,7 @@ function psconfig { nvim $PROFILE }
 # starship
 function ssconfig { nvim 'C:\Users\ThinkPad\Documents\PowerShell\starship.toml' }
 # nvim
-function viconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
+function vconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
 # windows terminal
 function wtconfig { nvim 'C:\Users\ThinkPad\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' }
 # lf
@@ -88,7 +90,6 @@ function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.t
 # ------------------- lf -------------------
 # lfcd
 # 同步powershell与退出lf时的路径一致
-# Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
 Set-PSReadLineKeyHandler -Chord Ctrl+f -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
     [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
