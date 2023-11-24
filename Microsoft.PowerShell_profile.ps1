@@ -23,7 +23,7 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function HistorySearchBackward
 
 # Alias
-Set-Alias v nvim
+Set-Alias vi nvim
 Set-Alias g LazyGit
 Set-Alias ipy ipython
 Set-Alias rename Rename-Item
@@ -79,7 +79,7 @@ function psconfig { nvim $PROFILE }
 # starship
 function ssconfig { nvim 'C:\Users\ThinkPad\Documents\PowerShell\starship.toml' }
 # nvim
-function vconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
+function viconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
 # windows terminal
 function wtconfig { nvim 'C:\Users\ThinkPad\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' }
 # lf
