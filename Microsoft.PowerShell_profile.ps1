@@ -24,9 +24,19 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function HistorySearchBackward
 
 # Alias
 Set-Alias vi nvim
-Set-Alias g LazyGit
+Set-Alias gg LazyGit
 Set-Alias ipy ipython
 Set-Alias rename Rename-Item
+
+# 复制当前路径 /
+function Copy-WorkingDirectory {
+    $path = (Get-Location).Path
+    $quotedPath = "`'$path`'"
+    $quotedPath | Set-Clipboard
+    Write-Host "`nCopied path to clipboard:`n`n$quotedPath`n" #`n是换行符
+    # Write-Host "`nCopied path to clipboard:`n`n$Path`n" #`n是换行符
+}
+Set-Alias -Name / -Value Copy-WorkingDirectory
 
 # Utilities
 function which ($command) {
@@ -116,6 +126,9 @@ function img { wezterm imgcat $args }
 
 # ni 新建文本
 # ren 重命名
+
+
+
 
 
 
