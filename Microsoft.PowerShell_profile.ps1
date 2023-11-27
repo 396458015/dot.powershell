@@ -52,6 +52,10 @@ function ListDirectory {
 Set-Alias -Name ls -Value ListDirectory
 Set-Alias -Name ll -Value Get-ChildItem
 
+# 树状图
+function list_tree{ tree /F }
+Set-Alias -Name lt -Value list_tree
+
 # Basic commands
 function touch($file) { "" | Out-File $file -Encoding ASCII }
 function q { exit }
