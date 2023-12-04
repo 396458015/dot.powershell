@@ -56,6 +56,9 @@ Set-Alias -Name ll -Value Get-ChildItem
 function list_tree{ tree /F }
 Set-Alias -Name lt -Value list_tree
 
+# Computer info
+Set-Alias fetch winfetch
+
 # Basic commands
 function touch($file) { "" | Out-File $file -Encoding ASCII }
 function q { exit }
@@ -100,6 +103,8 @@ function wtconfig { nvim 'C:\Users\ThinkPad\AppData\Local\Packages\Microsoft.Win
 function lfconfig { nvim 'C:\Users\ThinkPad\AppData\Local\lf\lfrc' }
 # goneovim
 function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.toml' }
+# winfetch
+function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
 
 # ------------------- lf -------------------
 # lfcd

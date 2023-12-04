@@ -16,22 +16,32 @@
      或通过PSGallery安装  
          Open powershell  
          Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'  
-  4. 安装 starship  
+  4. 通过scoop安装winfetch  
+         'scoop bucket add extras'  
+         'scoop install winfetch'  
+     winfetch仓库:https://github.com/lptstr/winfetch  
+     winfetch安装介绍:https://github.com/lptstr/winfetch/wiki/Installation  
+     * alias fetch (winfetch)  
+     * 配置文件路径:'C:\Users\ThinkPad\.config\winfetch\config.ps1'  
+     * 配置文件快捷键:'wfconfig'  
+     * winfetch仓库:https://github.com/lptstr/winfetch  
+     * winfetch安装介绍:https://github.com/lptstr/winfetch/wiki/Installation  
+  5. 安装 starship  
      4.1 Open powershell  
      4.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
      4.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
      4.4 配置文件'starship.toml'.  
          路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
      4.5 快捷命令'ssconfig'  
-  5. 安装lf  
+  6. 安装lf  
      5.1 Open powershell  
      5.2 Input 'scoop install lf'  
      5.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
      注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
-  6. install Directory jumper z (通过scoop)  
+  7. install Directory jumper z (通过scoop)  
      6.1 Open powershell  
      6.2 Input 'scoop install z'  
-  7. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+  8. 由于版本自带命令提示插件'PSReadLine',无需安装.  
 
 # usage
 ## z
