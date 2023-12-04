@@ -83,9 +83,9 @@
   - o: 使用输入的编辑器打开文件（编辑器需要配置环境变量）
 
   - 标记
-    ': 跳转标记文件夹
-    ": 删除标记文件夹
-    m: 新建标记文件
+    ,: 跳转标记文件夹  
+    <: 删除标记文件夹  
+    m: 新建标记文件  
 
 ## scoop
 
@@ -142,7 +142,8 @@
    - To update a globally installed app (Git):  
    sudo scoop update git --global
 
-
+## winfetch
+  - fetch (winfetch)
 
 
 
