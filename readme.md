@@ -78,7 +78,7 @@
     <: 删除标记文件夹  
     m: 新建标记文件  
 ---
-  - <c-o>: 在terminal emulator打开该路径  
+  - \<c-o>: 在terminal emulator打开该路径  
   - o: 在资源管理器中打开当前文件夹  
   - O: openwith  
   - v: nvim打开  
