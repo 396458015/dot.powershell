@@ -35,7 +35,7 @@
      5.1 Open powershell  
      5.2 Input 'scoop install lf'  
      5.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
-     5.4 安装zip. Input 'scoop install lf'  
+     5.4 安装zip. Input 'scoop install zip'  
      注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
   7. install Directory jumper z (通过scoop)  
      6.1 Open powershell  
