@@ -133,9 +133,8 @@ function img { wezterm imgcat $args }
 # ------------------- fzf + nvim + bat -------------------
 # fzf open by nvim, preview by bat
 function Invoke-FZF() {
-    $fzfArgs = @("--color", "fg:#abb2bf,hl:#d33682,hl+:#d33682,bg+:#3c4452,gutter:-1")
-    $result = & (Get-Command -CommandType Application fzf) --preview 'bat --color=always --style=numbers --line-range=:500 {}' $fzfArgs $args
-# 'bat --theme=gruvbox-dark --color=always --style=numbers --line-range=:500 {}'
+    $fzfArgs = @("--color", "fg:#abb2bf,hl:#e78284,hl+:#e78284,bg+:#3c4452,gutter:-1")
+    $result = & (Get-Command -CommandType Application fzf) --preview 'bat --theme=TwoDark --color=always --style=numbers --line-range=:500 {}' $fzfArgs $args
 # 'cat =:500 {}'
     if ($result) {
         nvim $result
