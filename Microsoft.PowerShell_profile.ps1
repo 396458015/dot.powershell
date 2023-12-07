@@ -1,5 +1,9 @@
 # PowerShell settings
 
+# 解决fzf查询结果含有CJK,路径乱码nvim打不开的情况
+# set PowerShell to UTF-8
+[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+
 Invoke-Expression (&starship init powershell)
 Import-Module Terminal-Icons
 
@@ -115,9 +119,9 @@ Set-PSReadLineKeyHandler -Chord Ctrl+f -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
 }
 
-Set-PSReadlineKeyHandler -Chord "Alt+f"  -ScriptBlock {
-    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("lfcd ")
-}
+# Set-PSReadlineKeyHandler -Chord "Alt+f"  -ScriptBlock {
+#     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("lfcd ")
+# }
 
 # lf-trsah (回收站)
 function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
@@ -125,6 +129,24 @@ function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
 # ------------------- wezterm -------------------
 # wezterm图片预览
 function img { wezterm imgcat $args }
+
+
+# ------------------- fzf + bat -------------------
+# fzf open by nvim
+function Invoke-FZF() {
+    $result = . (Get-Command -CommandType Application fzf) --preview 'bat --color=always --style=numbers --line-range=:500 {}' $args
+	# $result = . (Get-Command -CommandType Application fzf) --preview 'bat --theme=gruvbox-dark --color=always --style=numbers --line-range=:500 {}' $args
+	# $result = . (Get-Command -CommandType Application fzf) --preview 'cat =:500 {}' $args
+    if ($result) {
+        nvim $result
+    }
+}
+# Set-Alias ff Invoke-FZF
+Set-PSReadLineKeyHandler -Chord alt+f -ScriptBlock {
+    [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
+    [Microsoft.Powershell.PSConsoleReadline]::Insert("Invoke-FZF")
+    [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
+}
 
 # ------------------- alacritty -------------------
 # alacritty映射特性，有缺陷,vim的insert状态下输入快捷键会输出'F10,a'等
@@ -135,6 +157,7 @@ function img { wezterm imgcat $args }
 
 # ni 新建文本
 # ren 重命名
+
 
 
 

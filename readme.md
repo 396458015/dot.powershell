@@ -25,22 +25,32 @@
      * winfetch仓库:https://github.com/lptstr/winfetch  
      * winfetch安装介绍:https://github.com/lptstr/winfetch/wiki/Installation  
   5. 安装 starship  
-     4.1 Open powershell  
-     4.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
-     4.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     4.4 配置文件'starship.toml'.  
-         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     4.5 快捷命令'ssconfig'  
-  6. 安装lf  
      5.1 Open powershell  
-     5.2 Input 'scoop install lf'  
-     5.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
-     5.4 安装zip. Input 'scoop install zip'  
-     注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
-  7. install Directory jumper z (通过scoop)  
+     5.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
+     5.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     5.4 配置文件'starship.toml'.  
+         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     5.5 快捷命令'ssconfig'  
+  6. 安装lf  
      6.1 Open powershell  
-     6.2 Input 'scoop install z'  
-  8. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+     6.2 Input 'scoop install lf'  
+     6.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
+     6.4 安装zip. Input 'scoop install zip'  
+     注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
+  7. 安装fzf  
+     7.1 Open powershell  
+     7.2 Input 'scoop install fzf'  
+     快捷键 alt+f  
+     注意：fzf不能正确获得名称或路径含中文字符，将powershell设置为utf8格式可以解决该问题.  
+  8. 安装bat  
+     8.1 Open powershell  
+     8.2 Input 'scoop install bat'  
+     分别在powershell和lf配置文件添加代码预览bat的配置  
+     采用bat实现lf和fzf的代码预览含高亮.ps:lf自身的预览不含高亮  
+  9. install Directory jumper z (通过scoop)  
+     9.1 Open powershell  
+     9.2 Input 'scoop install z'  
+  10. 由于版本自带命令提示插件'PSReadLine',无需安装.  
 
 # usage
 ## z
