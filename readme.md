@@ -47,6 +47,7 @@
      8.2 Input 'scoop install bat'  
      分别在powershell和lf配置文件添加代码预览bat的配置  
      采用bat实现lf和fzf的代码预览含高亮.ps:lf自身的预览不含高亮  
+     查看bat配色主题,'bat --list-themes'
   9. install Directory jumper z (通过scoop)  
      9.1 Open powershell  
      9.2 Input 'scoop install z'  
