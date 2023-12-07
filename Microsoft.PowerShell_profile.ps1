@@ -130,13 +130,13 @@ function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
 # wezterm图片预览
 function img { wezterm imgcat $args }
 
-
-# ------------------- fzf + bat -------------------
-# fzf open by nvim
+# ------------------- fzf + nvim + bat -------------------
+# fzf open by nvim, preview by bat
 function Invoke-FZF() {
-    $result = . (Get-Command -CommandType Application fzf) --preview 'bat --color=always --style=numbers --line-range=:500 {}' $args
-	# $result = . (Get-Command -CommandType Application fzf) --preview 'bat --theme=gruvbox-dark --color=always --style=numbers --line-range=:500 {}' $args
-	# $result = . (Get-Command -CommandType Application fzf) --preview 'cat =:500 {}' $args
+    $fzfArgs = @("--color", "fg:#abb2bf,hl:#d33682,hl+:#d33682,bg+:#3c4452,gutter:-1")
+    $result = & (Get-Command -CommandType Application fzf) --preview 'bat --color=always --style=numbers --line-range=:500 {}' $fzfArgs $args
+# 'bat --theme=gruvbox-dark --color=always --style=numbers --line-range=:500 {}'
+# 'cat =:500 {}'
     if ($result) {
         nvim $result
     }
