@@ -2,7 +2,7 @@
 
 # 解决fzf查询结果含有CJK,路径乱码nvim打不开的情况
 # set PowerShell to UTF-8
-[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 Invoke-Expression (&starship init powershell)
 Import-Module Terminal-Icons
@@ -113,7 +113,7 @@ function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
 # ------------------- lf -------------------
 # lfcd
 # 同步powershell与退出lf时的路径一致
-Set-PSReadLineKeyHandler -Chord Ctrl+f -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord alt+f -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
     [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
@@ -126,26 +126,65 @@ Set-PSReadLineKeyHandler -Chord Ctrl+f -ScriptBlock {
 # lf-trsah (回收站)
 function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
 
-# ------------------- wezterm -------------------
-# wezterm图片预览
-function img { wezterm imgcat $args }
-
 # ------------------- fzf + nvim + bat -------------------
-# fzf open by nvim, preview by bat
+#█▓▒░ fzf
+$fzf_opts = @(
+    # "--multi",
+    # "--reverse",
+    # "--exact",
+    "--height 100%",
+    "--preview-window=right:55%",
+    "--header='      '",
+    "--prompt=''",#
+    "--marker='󰸞'",#✓
+    "--pointer='▶'",#➤▶
+    "--info=inline:'󰶺  '",
+    "--no-separator --scrollbar='▐'",
+    "--ansi",
+    "--cycle",
+    "--border=rounded --border-label='󰞘  󰞗'",
+    "--margin=0,0",
+    "--preview 'bat --theme=TwoDark --color=always --style=numbers --line-range :500 {}'",
+    "--color=fg:#abb2bf,bg+:#343d46,gutter:-1,pointer:#ff5189,info:#f09479,hl:#36c692,hl+:#36c692,label:#f09479",
+    "--color=marker:#f09479,spinner:#36c692,header:#80a0ff,fg+:#cdd6f4,prompt:#87afff,border:#51576d",
+    "--bind ctrl-p:toggle-preview",
+    "--bind ctrl-j:down",
+    "--bind ctrl-k:up",
+    "--bind ctrl-s:toggle-sort",
+    "--bind ctrl-f:preview-half-page-down",
+    "--bind ctrl-b:preview-half-page-up",
+    "--bind ctrl-a:select-all"
+    # "--bind ctrl-u:preview-up",
+    # "--bind ctrl-d:preview-down",
+    # "--bind ctrl-f:page-down",
+    # "--bind ctrl-b:page-up"
+)
+Set-Item Env:FZF_DEFAULT_OPTS -Value ($fzf_opts -join " ")
+
+# 打开fzf用nvim打开文件
 function Invoke-FZF() {
-    $fzfArgs = @("--color", "fg:#abb2bf,hl:#e78284,hl+:#e78284,bg+:#3c4452,gutter:-1")
-    $result = & (Get-Command -CommandType Application fzf) --preview 'bat --theme=TwoDark --color=always --style=numbers --line-range=:500 {}' $fzfArgs $args
-# 'cat =:500 {}'
+    $result = . (Get-Command -CommandType Application fzf) $args
     if ($result) {
         nvim $result
     }
 }
-# Set-Alias ff Invoke-FZF
-Set-PSReadLineKeyHandler -Chord alt+f -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord ctrl+f -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
     [Microsoft.Powershell.PSConsoleReadline]::Insert("Invoke-FZF")
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
 }
+
+# 打开fzf并且cd进去
+Set-PSReadlineKeyHandler -Chord ctrl+g -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('cd "$(fzf)\.."')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+function cf {cd "$(fzf)\.."}
+
+# ------------------- wezterm -------------------
+# wezterm图片预览
+function img { wezterm imgcat $args }
 
 # ------------------- alacritty -------------------
 # alacritty映射特性，有缺陷,vim的insert状态下输入快捷键会输出'F10,a'等

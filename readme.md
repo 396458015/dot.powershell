@@ -36,11 +36,12 @@
      6.2 Input 'scoop install lf'  
      6.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
      6.4 安装zip. Input 'scoop install zip'  
+     快捷键 alt+f  
      注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
   7. 安装fzf  
      7.1 Open powershell  
      7.2 Input 'scoop install fzf'  
-     快捷键 alt+f  
+     快捷键 ctrl+f ctrl+g  
      注意：fzf不能正确获得名称或路径含中文字符，将powershell设置为utf8格式可以解决该问题.  
   8. 安装bat  
      8.1 Open powershell  
