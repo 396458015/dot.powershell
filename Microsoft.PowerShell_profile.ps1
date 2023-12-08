@@ -145,7 +145,7 @@ $fzf_opts = @(
     "--border=rounded --border-label='󰞘  󰞗'",
     "--margin=0,0",
     "--preview 'bat --theme=TwoDark --color=always --style=numbers --line-range :500 {}'",
-    "--color=fg:#abb2bf,bg+:#343d46,gutter:-1,pointer:#ff5189,info:#f09479,hl:#36c692,hl+:#36c692,label:#f09479",
+    "--color=fg:#abb2bf,bg+:#343d46,gutter:-1,pointer:#ff5189,info:#f09479,hl:#36c692,hl+:#36c692,label:#80a0ff",
     "--color=marker:#f09479,spinner:#36c692,header:#80a0ff,fg+:#cdd6f4,prompt:#87afff,border:#51576d",
     "--bind ctrl-p:toggle-preview",
     "--bind ctrl-j:down",
