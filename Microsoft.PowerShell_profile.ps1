@@ -109,6 +109,8 @@ function lfconfig { nvim 'C:\Users\ThinkPad\AppData\Local\lf\lfrc' }
 function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.toml' }
 # winfetch
 function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
+# yazi
+function yzconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\yazi\config\keymap.toml' }
 
 # ------------------- lf -------------------
 # lfcd
@@ -181,6 +183,13 @@ Set-PSReadlineKeyHandler -Chord ctrl+g -ScriptBlock {
   [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 function cf {cd "$(fzf)\.."}
+
+# ------------------- yazi -------------------
+Set-PSReadLineKeyHandler -Chord Alt+g -ScriptBlock {
+    [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
+    [Microsoft.Powershell.PSConsoleReadline]::Insert("yazi")
+    [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
+}
 
 # ------------------- wezterm -------------------
 # wezterm图片预览
