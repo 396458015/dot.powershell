@@ -185,9 +185,20 @@ Set-PSReadlineKeyHandler -Chord ctrl+g -ScriptBlock {
 function cf {cd "$(fzf)\.."}
 
 # ------------------- yazi -------------------
+# Changing working directory when exiting Yazi
+function yzcd {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -Path $cwd
+    }
+    Remove-Item -Path $tmp
+}
+
 Set-PSReadLineKeyHandler -Chord Alt+g -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
-    [Microsoft.Powershell.PSConsoleReadline]::Insert("yazi")
+    [Microsoft.Powershell.PSConsoleReadline]::Insert("yzcd")
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
 }
 
@@ -204,7 +215,6 @@ function img { wezterm imgcat $args }
 
 # ni 新建文本
 # ren 重命名
-
 
 
 

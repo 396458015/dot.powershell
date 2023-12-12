@@ -60,7 +60,10 @@
      - 配置文件路径  
      'C:\Users\ThinkPad\AppData\Roaming\yazi\config'  
      - 自动代码预览，无需安装bat;wezterm自动图片预览  
-
+     11.4 for zip/rar preview  
+        scoop install unar  
+     11.5 for JSON preview  
+        scoop install jq  
 
 # usage
 ## z
@@ -169,23 +172,26 @@
   - wf (winfetch)
 
 ## yazi
-  - a XX    创建XX文件  
-  - a XX /  创建XX文件夹  
+- a XX    创建XX文件  
+- a XX /  创建XX文件夹  
 
-  - y    copy  
-  - d    cut  
-  - x    delete to 回收站  
-  - X    永久删除  
-  - r    rename  
+- y    copy  
+- d    cut  
+- x    delete to 回收站  
+- X    永久删除  
+- r    rename  
 
-  - g XX    目录移动  
+- g XX         移动到已存dir  
+- g <space>    目录跳转  
 
-  - Z    fzf  
-  - cd   copy parent directory  
-  - <A-PageUp>    预览上移动  
-  - <A-PageDown>  预览下移动  
+- Z    fzf  
+- cd   copy parent directory  
+- <A-PageUp>    预览上移动  
+- <A-PageDown>  预览下移动  
 
-  - 可以通过多选后，r重命名，批量化修改名字  
+- S  rg搜索文件内容  
+
+- 可以通过多选后，r重命名，批量化修改名字  
 
 
 
