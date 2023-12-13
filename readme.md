@@ -180,6 +180,7 @@
 ## winfetch
   - wf (winfetch)
 
+## yazi
 
 - a XX    创建XX文件  
 - a XX/   创建XX文件夹  
@@ -212,8 +213,6 @@
 - O        选择打开方式  
 - C-Enter  选择打开方式  
   Reveal   用'我的电脑'打开  
-## yazi
-
 
 
 
