@@ -175,6 +175,7 @@
   - wf (winfetch)
 
 ## yazi
+---
 - a XX    创建XX文件  
 - a XX/   创建XX文件夹  
 
