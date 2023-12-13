@@ -115,13 +115,13 @@ function yzconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\yazi\config\keymap.t
 # ------------------- lf -------------------
 # lfcd
 # 同步powershell与退出lf时的路径一致
-Set-PSReadLineKeyHandler -Chord alt+f -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord alt+g -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
     [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
 }
 
-# Set-PSReadlineKeyHandler -Chord "Alt+f"  -ScriptBlock {
+# Set-PSReadlineKeyHandler -Chord "Alt+g"  -ScriptBlock {
 #     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("lfcd ")
 # }
 
@@ -196,7 +196,7 @@ function yzcd {
     Remove-Item -Path $tmp
 }
 
-Set-PSReadLineKeyHandler -Chord Alt+g -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord Alt+f -ScriptBlock {
     [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
     [Microsoft.Powershell.PSConsoleReadline]::Insert("yzcd")
     [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
