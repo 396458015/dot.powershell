@@ -178,29 +178,34 @@
 - a XX    创建XX文件  
 - a XX/   创建XX文件夹  
 
+---
 - y    copy  
 - d    cut  
 - x    delete to 回收站  
 - X    永久删除  
 - r    rename  
+       可以通过多选后，r重命名，批量化修改名字  
 
+---
 - g XX         移动到已存dir  
 - g <space>    目录跳转  
 
+---
 - Z    fzf  
 - cd   copy parent directory  
 - <A-PageUp>    预览上移动  
 - <A-PageDown>  预览下移动  
 
+---
 - S  rg搜索文件内容  
 
+---
 - o        打开  
 - Enter    打开  
 - O        选择打开方式  
 - C-Enter  选择打开方式  
   Reveal   用'我的电脑'打开  
 
-- 可以通过多选后，r重命名，批量化修改名字  
 
 
 
