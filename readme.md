@@ -56,14 +56,17 @@
   11. 安装yazi.  
      11.1. Download Git from https://git-scm.com/download/win.  
      11.2. Append C:\Program Files\Git\usr\bin to the PATH environment variable, note that depends on your Git installation path.  
+     例如将D:\Program Files\Git\usr\bin加入到环境变量，同时加入到'用户变量'和'系统变量'的path  
      11.3. scoop install yazi  
-     - 配置文件路径  
-     'C:\Users\ThinkPad\AppData\Roaming\yazi\config'  
-     - 自动代码预览，无需安装bat;wezterm自动图片预览  
      11.4 for zip/rar preview  
         scoop install unar  
      11.5 for JSON preview  
         scoop install jq  
+     - 配置文件路径  
+     'C:\Users\ThinkPad\AppData\Roaming\yazi\config'  
+     - 自动代码预览，无需安装bat;wezterm自动图片预览  
+     - 若要通过mpv播放视频,需要将mpv的安装路径增加到环境变量中的'用户变量'  
+       如D:\Program Files\mpv-x86_64-20220424-git-9d133eb加入到'用户变量'  
 
 # usage
 ## z
