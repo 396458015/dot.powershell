@@ -133,6 +133,9 @@
    - 移除软件  
      scoop uninstall [packageName]
 
+   - Show status and check for new app versions  
+     scoop status  
+
    - To update all installed packages:  
      scoop update *
 
@@ -149,7 +152,7 @@
      scoop bucket add [bucket]
 
    - 删除仓库  
-     scoop bucket rm main
+     scoop bucket rm main  
 
    --
 
