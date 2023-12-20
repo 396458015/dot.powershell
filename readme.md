@@ -180,6 +180,14 @@
    - To update a globally installed app (Git):  
    sudo scoop update git --global
 
+
+
+   - Cleanup apps by removing old versions
+   scoop cleanup *
+
+   - Show or clear the download cache
+   scoop cache rm *
+
 ## winfetch
   - wf (winfetch)
 
