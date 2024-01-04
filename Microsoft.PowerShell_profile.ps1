@@ -109,6 +109,8 @@ function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.t
 function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
 # yazi
 function yzconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\yazi\config\keymap.toml' }
+# lazygit
+function lgconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\lazygit\config.yml' }
 
 # ------------------- fzf + nvim + bat -------------------
 #█▓▒░ fzf
