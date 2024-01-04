@@ -103,30 +103,12 @@ function ssconfig { nvim 'C:\Users\ThinkPad\Documents\PowerShell\starship.toml' 
 function viconfig { nvim 'C:\Users\ThinkPad\AppData\Local\nvim\init.lua' }
 # windows terminal
 function wtconfig { nvim 'C:\Users\ThinkPad\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json' }
-# lf
-function lfconfig { nvim 'C:\Users\ThinkPad\AppData\Local\lf\lfrc' }
 # goneovim
 function goconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\.goneovim\settings.toml' }
 # winfetch
 function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
 # yazi
 function yzconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\yazi\config\keymap.toml' }
-
-# ------------------- lf -------------------
-# lfcd
-# 同步powershell与退出lf时的路径一致
-Set-PSReadLineKeyHandler -Chord alt+g -ScriptBlock {
-    [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
-    [Microsoft.Powershell.PSConsoleReadline]::Insert("lfcd.ps1")
-    [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
-}
-
-# Set-PSReadlineKeyHandler -Chord "Alt+g"  -ScriptBlock {
-#     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("lfcd ")
-# }
-
-# lf-trsah (回收站)
-function trash { lf 'C:\Users\ThinkPad\AppData\Local\lf\Trash' }
 
 # ------------------- fzf + nvim + bat -------------------
 #█▓▒░ fzf
