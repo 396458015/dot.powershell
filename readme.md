@@ -31,29 +31,22 @@
      5.4 配置文件'starship.toml'.  
          路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
      5.5 快捷命令'ssconfig'  
-  6. 安装lf  
-     6.1 Open powershell  
-     6.2 Input 'scoop install lf'  
-     6.3 将仓库'dot.lf'内的文件复制到'cd C:\Users\ThinkPad\AppData\Local\lf\'  
-     6.4 安装zip. Input 'scoop install zip'  
-     快捷键 alt+f  
-     注意:有且只有wt为'1.16.10231.0'的版本能够正常显示lf中的中文。  
-  7. 安装fzf  
+  6. 安装fzf  
      7.1 Open powershell  
      7.2 Input 'scoop install fzf'  
      快捷键 ctrl+f ctrl+g  
      注意：fzf不能正确获得名称或路径含中文字符，将powershell设置为utf8格式可以解决该问题.  
-  8. 安装bat  
+  7. 安装bat  
      8.1 Open powershell  
      8.2 Input 'scoop install bat'  
-     分别在powershell和lf配置文件添加代码预览bat的配置  
-     采用bat实现lf和fzf的代码预览含高亮.ps:lf自身的预览不含高亮  
+     分别在powershell配置文件添加代码预览bat的配置  
+     采用bat实现fzf的代码预览含高亮.ps:yazi自身集成了代码预览  
      查看bat配色主题,'bat --list-themes'
-  9. install Directory jumper z (通过scoop)  
+  8. install Directory jumper z (通过scoop)  
      9.1 Open powershell  
      9.2 Input 'scoop install z'  
-  10. 由于版本自带命令提示插件'PSReadLine',无需安装.  
-  11. 安装yazi.  
+  9. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+  10. 安装yazi.  
      11.1. Download Git from https://git-scm.com/download/win.  
      11.2. Append C:\Program Files\Git\usr\bin to the PATH environment variable, note that depends on your Git installation path.  
      例如将D:\Program Files\Git\usr\bin加入到环境变量，同时加入到'用户变量'和'系统变量'的path  
@@ -83,45 +76,6 @@
   - z a
   - z b
 
-## lf
-  - :maps 查看快捷键  
----
-  - a: 新建文件  
-  - A: 新建文件夹  
----
-  - yy: 复制文件  
-  - dd: 剪切文件  
-  - c: 取消复制或剪切  
-  - yp: 复制路径  
----
-  - x: 删除到\Trash  
-  - X: 彻底删除  
----
-  - rename  
-     r: 更改文件名（光标在文件名与后缀之间）  
-     i: 更改文件名（光标在文件名最前面）  
-     I: 更改文件名（光标在后缀处）  
----
-  - V: 全选  
-  - spacebar: 选择文件  
-  - u: 取消选择  
----
-  - 书签  
-    ,: 跳转标记文件夹  
-    <: 删除标记文件夹  
-    m: 新建标记文件  
----
-  - \<c-o>: 在terminal emulator打开该路径  
-  - o: 在资源管理器中打开当前文件夹  
-  - O: openwith  
-  - v: nvim打开  
----
-  - 压缩  
-    zz: 压缩文件  
-    zu: 解压文件  
----
-  - .: 切换显示隐藏文件  
-  - R: 重新加载  
 ## scoop
 
    - 搜索软件  
@@ -179,8 +133,6 @@
 
    - To update a globally installed app (Git):  
    sudo scoop update git --global
-
-
 
    - Cleanup apps by removing old versions
    scoop cleanup *
