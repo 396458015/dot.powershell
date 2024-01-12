@@ -3,7 +3,8 @@
 
 # 配置powershell
   1. powershell配置文件'Microsoft.PowerShell_profile.ps1'  
-     路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'  
+     安装路径：'C:\Program Files\PowerShell\7'  
+     配置文件路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'  
      快捷命令'psconfig'  
   2. 安装scoop, 通过scoop安装插件  
      2.1 Open powershell  
