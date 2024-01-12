@@ -90,11 +90,69 @@ function dt { cd '~/Desktop' }
 # (Get-PSReadLineOption).HistorySavePath  可以获得历史记录文件路径
 function edith { nvim -c 'normal! G' (Get-PSReadLineOption).HistorySavePath }
 
+
+# ------------------- open app -------------------
+
+function alacritty_start {
+    $alacritty_path = "D:\Program Files\alacritty\alacritty.exe"
+    Start-Process $alacritty_path
+}
+Set-Alias -Name alacritty -Value alacritty_start
+
+function start_wezterm {
+    $wezterm_path = "D:\Program Files\WezTerm\wezterm-gui.exe"
+    Start-Process $wezterm_path
+}
+Set-Alias -Name wezterm -Value start_wezterm
+
+function sumatrapdf_start {
+    $sumatrapdf_path = "C:\Users\ThinkPad\scoop\apps\SumatraPDF\current\SumatraPDF.exe"
+    Start-Process $sumatrapdf_path
+}
+Set-Alias -Name sumatra -Value sumatrapdf_start
+
+function word_start {
+    $word_path = "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE"
+    Start-Process $word_path
+}
+Set-Alias -Name word -Value word_start
+
+function ppt_start {
+    $ppt_path = "C:\Program Files\Microsoft Office\root\Office16\POWERPNT.EXE"
+    Start-Process $ppt_path
+}
+Set-Alias -Name ppt -Value ppt_start
+
+function excel_start {
+    $excel_path = "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
+    Start-Process $excel_path
+}
+Set-Alias -Name excel -Value excel_start
+
+function chrome_start {
+    $chrome_path = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+    Start-Process $chrome_path
+}
+Set-Alias -Name chrome -Value chrome_start
+
+function niz_start {
+    $niz_path = "F:\package_tools\NIZ\23年6月编程固件说明校验软件包\23年6月编程固件说明校验软件包\micro82编程软件 V1.5.1\82EC(XRGB)Ble.exe"
+    Start-Process $niz_path
+}
+Set-Alias -Name niz -Value niz_start
+
+function geek_start {
+    $geek_path = "D:\Program Files\geek\geek.exe"
+    Start-Process $geek_path
+}
+Set-Alias -Name geek -Value geek_start
+
+
 # ------------------- config files -------------------
 # wezterm
 function weconfig { nvim 'C:\Users\ThinkPad\.config\wezterm\config\appearance.lua' }
 # alacritty
-function alconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\alacritty\alacritty.yml' }
+function alconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\alacritty\alacritty.toml' }
 # powershell
 function psconfig { nvim $PROFILE }
 # starship
