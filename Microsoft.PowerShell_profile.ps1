@@ -94,7 +94,7 @@ function edith { nvim -c 'normal! G' (Get-PSReadLineOption).HistorySavePath }
 # ------------------- open app -------------------
 
 function alacritty_start {
-    $alacritty_path = "D:\Program Files\alacritty\alacritty.exe"
+    $alacritty_path = "C:\Users\ThinkPad\scoop\apps\alacritty\current\alacritty.exe"
     Start-Process $alacritty_path
 }
 Set-Alias -Name alacritty -Value alacritty_start
