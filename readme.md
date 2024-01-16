@@ -82,8 +82,11 @@
    - 搜索软件  
      scoop search [packageName]
 
-   - 下载软件  
+   - 安装软件  
      scoop install [packageName]
+
+   - 指定安装版本  
+     scoop install [packageName]@version   
 
    - 移除软件  
      scoop uninstall [packageName]
