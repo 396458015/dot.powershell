@@ -89,8 +89,11 @@ function dt { cd '~/Desktop' }
 # 修改 PSreadLine 历史记录, 删除错误的记录
 # (Get-PSReadLineOption).HistorySavePath  可以获得历史记录文件路径
 function edith { nvim -c 'normal! G' (Get-PSReadLineOption).HistorySavePath }
-
-
+Set-PSReadLineKeyHandler -Chord ctrl+e -ScriptBlock {
+    [Microsoft.Powershell.PSConsoleReadline]::RevertLine()
+    [Microsoft.Powershell.PSConsoleReadline]::Insert("edith")
+    [Microsoft.Powershell.PSConsoleReadline]::AcceptLine()
+}
 # ------------------- open app -------------------
 
 function alacritty_start {
