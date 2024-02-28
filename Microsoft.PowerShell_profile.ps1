@@ -172,6 +172,8 @@ function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
 function yzconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\yazi\config\keymap.toml' }
 # lazygit
 function lgconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\lazygit\config.yml' }
+# rime
+function riconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\Rime\default.custom.yaml' }
 
 # ------------------- fzf + nvim + bat -------------------
 #█▓▒░ fzf
