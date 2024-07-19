@@ -1,5 +1,8 @@
 # PowerShell settings
 
+# 设置yazi环境(0.2.5)
+$Env:YAZI_FILE_ONE = "D:\Program Files\Git\usr\bin\file.exe"
+
 # 解决fzf查询结果含有CJK,路径乱码nvim打不开的情况
 # set PowerShell to UTF-8
 $OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
@@ -172,8 +175,6 @@ function wfconfig { nvim 'C:\Users\ThinkPad\.config\winfetch\config.ps1' }
 function yzconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\yazi\config\keymap.toml' }
 # lazygit
 function lgconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\lazygit\config.yml' }
-# rime
-function riconfig { nvim 'C:\Users\ThinkPad\AppData\Roaming\Rime\default.custom.yaml' }
 
 # ------------------- fzf + nvim + bat -------------------
 #█▓▒░ fzf
