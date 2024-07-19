@@ -17,7 +17,9 @@
      或通过PSGallery安装  
          Open powershell  
          Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'  
-  4. 通过scoop安装winfetch  
+  4. 通过scoop安装tree-sitter,neovim中treesitter的latex需要  
+         'scoop install tree-sitter'  
+  5. 通过scoop安装winfetch  
          'scoop bucket add extras'  
          'scoop install winfetch'  
      * alias wf (winfetch)  
@@ -25,29 +27,29 @@
      * 配置文件快捷键:'wfconfig'  
      * winfetch仓库:https://github.com/lptstr/winfetch  
      * winfetch安装介绍:https://github.com/lptstr/winfetch/wiki/Installation  
-  5. 安装 starship  
-     5.1 Open powershell  
-     5.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
-     5.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     5.4 配置文件'starship.toml'.  
+  6. 安装 starship  
+     6.1 Open powershell  
+     6.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
+     6.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     6.4 配置文件'starship.toml'.  
          路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     5.5 快捷命令'ssconfig'  
-  6. 安装fzf  
+     6.5 快捷命令'ssconfig'  
+  7. 安装fzf  
      7.1 Open powershell  
      7.2 Input 'scoop install fzf'  
      快捷键 ctrl+f ctrl+g  
      注意：fzf不能正确获得名称或路径含中文字符，将powershell设置为utf8格式可以解决该问题.  
-  7. 安装bat  
+  8. 安装bat  
      8.1 Open powershell  
      8.2 Input 'scoop install bat'  
      分别在powershell配置文件添加代码预览bat的配置  
      采用bat实现fzf的代码预览含高亮.ps:yazi自身集成了代码预览  
      查看bat配色主题,'bat --list-themes'
-  8. install Directory jumper z (通过scoop)  
+  9. install Directory jumper z (通过scoop)  
      9.1 Open powershell  
      9.2 Input 'scoop install z'  
-  9. 由于版本自带命令提示插件'PSReadLine',无需安装.  
-  10. 安装yazi.  
+  10. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+  11. 安装yazi.  
      11.1. Download Git from https://git-scm.com/download/win.  
      11.2. Append C:\Program Files\Git\usr\bin to the PATH environment variable, note that depends on your Git installation path.  
      例如将D:\Program Files\Git\usr\bin加入到环境变量，同时加入到'用户变量'和'系统变量'的path  
