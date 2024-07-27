@@ -1,6 +1,44 @@
 # PowerShell settings
 
-# 设置yazi环境(0.2.5)
+# Import the module
+
+# ------------------- 颜色设置 -------------------
+# 下载"https://github.com/catppuccin/powershell"主题到C:\Users\ThinkPad\Documents\PowerShell\Modules\Catppuccin
+Import-Module Catppuccin
+# $Flavor = $Catppuccin['Frappe']
+$Flavor = $Catppuccin['Latte']
+# Set the colours of PSReadLine
+$Colors = @{
+	# Largely based on the Code Editor style guide
+	# Emphasis, ListPrediction and ListPredictionSelected are inspired by the Catppuccin fzf theme
+	
+	# Powershell colours
+	ContinuationPrompt     = $Flavor.Teal.Foreground()
+	Emphasis               = $Flavor.Red.Foreground()
+	Selection              = $Flavor.Surface0.Background()
+	
+	# PSReadLine prediction colours
+	InlinePrediction       = $Flavor.Overlay0.Foreground()
+	ListPrediction         = $Flavor.Mauve.Foreground()
+	ListPredictionSelected = $Flavor.Surface0.Background()
+
+	# Syntax highlighting
+	Command                = $Flavor.Blue.Foreground()
+	Comment                = $Flavor.Overlay0.Foreground()
+	Default                = $Flavor.Text.Foreground()
+	Error                  = $Flavor.Red.Foreground()
+	Keyword                = $Flavor.Mauve.Foreground()
+	Member                 = $Flavor.Rosewater.Foreground()
+	Number                 = $Flavor.Peach.Foreground()
+	Operator               = $Flavor.Sky.Foreground()
+	Parameter              = $Flavor.Pink.Foreground()
+	String                 = $Flavor.Green.Foreground()
+	Type                   = $Flavor.Yellow.Foreground()
+	Variable               = $Flavor.Lavender.Foreground()
+}
+Set-PSReadLineOption -Colors $Colors
+
+# ------------------- 设置yazi环境(0.2.5) -------------------
 $Env:YAZI_FILE_ONE = "D:\Program Files\Git\usr\bin\file.exe"
 
 # 解决fzf查询结果含有CJK,路径乱码nvim打不开的情况
@@ -195,8 +233,10 @@ $fzf_opts = @(
     "--border=rounded --border-label='󰞘  󰞗'",
     "--margin=0,0",
     "--preview 'bat --theme=TwoDark --color=always --style=numbers --line-range :500 {}'",
-    "--color=fg:#abb2bf,bg+:#343d46,gutter:-1,pointer:#ff5189,info:#f09479,hl:#36c692,hl+:#36c692,label:#80a0ff",
-    "--color=marker:#f09479,spinner:#36c692,header:#80a0ff,fg+:#cdd6f4,prompt:#87afff,border:#51576d",
+    # "--color=fg:#abb2bf,bg+:#343d46,gutter:-1,pointer:#ff5189,info:#f09479,hl:#36c692,hl+:#36c692,label:#80a0ff", # Frappe
+    # "--color=marker:#f09479,spinner:#36c692,header:#80a0ff,fg+:#cdd6f4,prompt:#87afff,border:#51576d", # Frappe
+    "--color=fg:$($Flavor.Text),bg+:$($Flavor.Surface0),gutter:-1,pointer:$($Flavor.Rosewater),info:$($Flavor.Mauve),hl:$($Flavor.Red),hl+:$($Flavor.Red),label:#80a0ff", # catppuccin
+    "--color=marker:$($Flavor.Rosewater),spinner:$($Flavor.Rosewater),header:$($Flavor.Red),fg+:$($Flavor.Text),prompt:$($Flavor.Mauve),border:$($Flavor.Surface2)", # catppuccin
     "--bind ctrl-p:toggle-preview",
     "--bind ctrl-j:down",
     "--bind ctrl-k:up",

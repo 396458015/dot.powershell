@@ -6,20 +6,22 @@
      安装路径：'C:\Program Files\PowerShell\7'  
      配置文件路径：'C:\Users\ThinkPad\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'  
      快捷命令'psconfig'  
-  2. 安装scoop, 通过scoop安装插件  
-     2.1 Open powershell  
-     2.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
-     2.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
-  3. 安装 Icons  
+  2. 设置powershell主题  
+     下载"https://github.com/catppuccin/powershell"主题到"C:\Users\ThinkPad\Documents\PowerShell\Modules\Catppuccin"
+  3. 安装scoop, 通过scoop安装插件  
+     3.1 Open powershell  
+     3.2 Input 'Set-ExecutionPolicy RemoteSigned -scope CurrentUser' 输入y  
+     3.3 Input 'iwr -useb https://gitee.com/glsnames/scoop-installer/raw/master/bin/install.ps1 | iex'  
+  4. 安装 Icons  
      通过scoop安装 (推荐),Open powershell  
          'scoop bucket add extras'  
          'scoop install terminal-icons'  
      或通过PSGallery安装  
          Open powershell  
          Input 'Install-Module -Name Terminal-Icons -Repository PSGallery -Force'  
-  4. 通过scoop安装tree-sitter,neovim中treesitter的latex需要  
+  5. 通过scoop安装tree-sitter,neovim中treesitter的latex需要  
          'scoop install tree-sitter'  
-  5. 通过scoop安装winfetch  
+  6. 通过scoop安装winfetch  
          'scoop bucket add extras'  
          'scoop install winfetch'  
      * alias wf (winfetch)  
@@ -27,42 +29,42 @@
      * 配置文件快捷键:'wfconfig'  
      * winfetch仓库:https://github.com/lptstr/winfetch  
      * winfetch安装介绍:https://github.com/lptstr/winfetch/wiki/Installation  
-  6. 安装 starship  
-     6.1 Open powershell  
-     6.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
-     6.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     6.4 配置文件'starship.toml'.  
-         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
-     6.5 快捷命令'ssconfig'  
-  7. 安装fzf  
+  7. 安装 starship  
      7.1 Open powershell  
-     7.2 Input 'scoop install fzf'  
+     7.2 Input  'scoop install starship'(推荐) 或者 'winget install starship'  
+     7.3 系统变量,设置变量名:'STARSHIP_CONFIG', 变量值:'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     7.4 配置文件'starship.toml'.  
+         路径：'C:\Users\ThinkPad\Documents\PowerShell\starship.toml'  
+     7.5 快捷命令'ssconfig'  
+  8. 安装fzf  
+     8.1 Open powershell  
+     8.2 Input 'scoop install fzf'  
      快捷键 ctrl+f ctrl+g  
      注意：fzf不能正确获得名称或路径含中文字符，将powershell设置为utf8格式可以解决该问题.  
-  8. 安装bat  
-     8.1 Open powershell  
-     8.2 Input 'scoop install bat'  
+  9. 安装bat  
+     9.1 Open powershell  
+     9.2 Input 'scoop install bat'  
      分别在powershell配置文件添加代码预览bat的配置  
      采用bat实现fzf的代码预览含高亮.ps:yazi自身集成了代码预览  
      查看bat配色主题,'bat --list-themes'
-  9. install Directory jumper z (通过scoop)  
-     9.1 Open powershell  
-     9.2 Input 'scoop install z'  
-  10. 由于版本自带命令提示插件'PSReadLine',无需安装.  
-  11. 安装yazi.  
-     11.1. Download Git from https://git-scm.com/download/win.  
-     11.2. Append C:\Program Files\Git\usr\bin to the PATH environment variable, note that depends on your Git installation path.  
+  10. install Directory jumper z (通过scoop)  
+     10.1 Open powershell  
+     10.2 Input 'scoop install z'  
+  11. 由于版本自带命令提示插件'PSReadLine',无需安装.  
+  12. 安装yazi.  
+     12.1. Download Git from https://git-scm.com/download/win.  
+     12.2. Append C:\Program Files\Git\usr\bin to the PATH environment variable, note that depends on your Git installation path.  
      例如将D:\Program Files\Git\usr\bin加入到环境变量，同时加入到'用户变量'和'系统变量'的path  
-     11.3. scoop install yazi  
-     11.4 for zip/rar preview  
+     12.3. scoop install yazi  
+     12.4 for zip/rar preview  
         scoop install unar  
-     11.5 for JSON preview  
+     12.5 for JSON preview  
         scoop install jq  
-     11.6 search file name  
+     12.6 search file name  
         scoop install fd  
-     11.7 search file content  
+     12.7 search file content  
         scoop install ripgrep  
-     11.8 fuzzy search file  
+     12.8 fuzzy search file  
         scoop install fzf  
      - 配置文件路径  
      'C:\Users\ThinkPad\AppData\Roaming\yazi\config'  
