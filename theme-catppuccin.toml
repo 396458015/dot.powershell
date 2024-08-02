@@ -2,7 +2,7 @@
 palette = "catppuccin_latte"
 # palette = "catppuccin_frappe"
 
-add_newline = false  # 顶格
+# add_newline = false  # 顶格
 
 [character]
 # Note the use of Catppuccin color 'maroon'
