@@ -110,6 +110,9 @@
    - To list all known buckets (a bucket is an application repository):  
      scoop bucket known
 
+   - 显示关联的bucket
+     scoop bucket list
+
    - To add a bucket by its alias or a Git repository URL:  
      scoop bucket add [bucket]
 
@@ -185,8 +188,10 @@
 - C-Enter  选择打开方式  
   Reveal   用'我的电脑'打开  
 
-
-
+将scoop中的main源从gitee切换至github  
+"scoop bucket list"  
+"scoop bucket rm main"  
+"scoop bucket add main https://github.com/ScoopInstaller/Main"  
 
 
 
