@@ -2,23 +2,49 @@
 palette = "catppuccin_latte"
 # palette = "catppuccin_frappe"
 
+add_newline = false  # 顶格
+
 [character]
 # Note the use of Catppuccin color 'maroon'
 # success_symbol = "[[♥](red) ❯](maroon)"
 # success_symbol = "[[░▒▓](lavender) ❯](maroon)"
-success_symbol = "[❯](maroon)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+# success_symbol = "[❯](maroon)"
+success_symbol = "[❯](green)"  #  ❯
+error_symbol   = "[✖](bold red)"
+vimcmd_symbol  = "[❮](green)"
 
 [directory]
-truncation_length = 10
+truncation_length = 10    # 显示父文件夹的数目
+truncate_to_repo  = false # git时显示路径
+truncation_symbol = "…/"
 style = "bold lavender"
 
 [git_branch]
 disabled = false
-symbol = " "
-style = "bold fg:#b4009e"
+symbol = " " #  
 
+[git_metrics]
+disabled = false # 显示git增加和删除的行数
+
+[cmd_duration]
+disabled = false
+min_time = 1_000
+show_milliseconds = true
+
+[shell]
+bash_indicator = ""
+fish_indicator = "󰈺"
+zsh_indicator = "󱋪"
+powershell_indicator = ""
+style = "cyan bold"
+disabled = false
+
+# [time]
+# disabled = false
+# format = "[$time]($style) "
+# time_format = "%H:%M:%S:%3f"
+
+# ================================================
 # palette tables should be last in the config ⚓️
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
