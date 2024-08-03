@@ -36,7 +36,7 @@ bash_indicator = ""
 fish_indicator = "󰈺"
 zsh_indicator = "󱋪"
 powershell_indicator = ""
-style = "cyan bold"
+style = "#0078d4 bold"
 disabled = false
 
 # [time]
