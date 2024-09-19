@@ -32,11 +32,13 @@ min_time = 1_000
 show_milliseconds = true
 
 [shell]
-bash_indicator = ""
+bash_indicator = ""  # ubuntu
+# bash_indicator = ""
 fish_indicator = "󰈺"
 zsh_indicator = "󱋪"
 powershell_indicator = ""
 style = "#0078d4 bold"
+# style = "#e95420 bold"  # ubuntu color
 disabled = false
 
 # [time]
