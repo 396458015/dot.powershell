@@ -68,11 +68,15 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function HistorySearchBackward
 
 # Alias
-Set-Alias ww wsl
 Set-Alias vi nvim
 Set-Alias gg LazyGit
 Set-Alias ipy ipython
 Set-Alias rename Rename-Item
+
+# 打开子系统,路径为~
+function ww {
+    wsl --cd /home/thinkpad
+}
 
 # 复制当前路径 /
 function Copy-WorkingDirectory {
