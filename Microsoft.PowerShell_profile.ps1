@@ -68,6 +68,7 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+j" -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+k" -Function HistorySearchBackward
 
 # Alias
+Set-Alias ww wsl
 Set-Alias vi nvim
 Set-Alias gg LazyGit
 Set-Alias ipy ipython
