@@ -44,6 +44,10 @@
   9. 安装bat  
      9.1 Open powershell  
      9.2 Input 'scoop install bat'  
+     9.3 'bat cache --build'  说明网址'https://github.com/sharkdp/bat#adding-new-syntaxes--language-definitions'
+     use 'bat --list-languages' to check if the new languages are available
+     if you ever want to go back to the default setting, 'bat cache --clear'
+     配置文件路径:'C:\Users\ThinkPad\AppData\Local\bat'
      分别在powershell配置文件添加代码预览bat的配置  
      采用bat实现fzf的代码预览含高亮.ps:yazi自身集成了代码预览  
      查看bat配色主题,'bat --list-themes'
